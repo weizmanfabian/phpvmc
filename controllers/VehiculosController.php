@@ -40,7 +40,43 @@ class VehiculosController
       $anio,
       $color
     );
-    $data["titulo"] = "Agregar Vehiculo";
+    $this->index();
+  }
+
+  public function editar($id)
+  {
+    $vehiculo = new VehiculosModel();
+    $data["id"] = $id;
+    $data["vehiculo"] = $vehiculo->getVehiculo($id);
+    $data["titulo"] = "Editar Vehículo";
+    require_once "views/vehiculos/vehiculosEdit.php";
+  }
+
+  public function actualizar()
+  {
+    $id = $_POST['id'];
+    $placa = $_POST['placa'];
+    $marca = $_POST['marca'];
+    $modelo = $_POST['modelo'];
+    $anio = $_POST['anio'];
+    $color = $_POST['color'];
+
+    $vehiculo = new VehiculosModel();
+    $vehiculo->actualizar(
+      $id,
+      $placa,
+      $marca,
+      $modelo,
+      $anio,
+      $color
+    );
+    $this->index();
+  }
+
+  public function eliminar($id)
+  {
+    $vehiculo = new VehiculosModel();
+    $vehiculo->eliminar($id);
     $this->index();
   }
 }

@@ -39,7 +39,7 @@
         echo "<td>" . $row['modelo'] . "</td>";
         echo "<td>" . $row['anio'] . "</td>";
         echo "<td>" . $row['color'] . "</td>";
-        echo "<td><a href='index.php?c=vehiculos&a=modificar&id=" . $row['id'] . "'>Editar</a></td>";
+        echo "<td><a href='index.php?c=vehiculos&a=editar&id=" . $row['id'] . "'>Editar</a></td>";
         echo "<td><a href='index.php?c=vehiculos&a=eliminar&id=" . $row['id'] . "'>Eliminar</a></td>";
         echo "</tr>";
       }

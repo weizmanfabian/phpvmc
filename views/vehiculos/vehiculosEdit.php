@@ -19,25 +19,26 @@
   <a href="index.php">Volver</a>
   <br>
   <br>
-  <form id="nuevo" name="nuevo" method="POST" autocomplete="off" action="index.php?c=vehiculos&a=guardar">
+  <form id="nuevo" name="nuevo" method="POST" autocomplete="off" action="index.php?c=vehiculos&a=actualizar">
+    <input type="hidden" id="id" name="id" value="<?php echo $data["id"] ?>">
     <div class="form-floating mb-3">
-      <input type="text" class="form-control" id="placa" name="placa" placeholder="Placa">
+      <input type="text" class="form-control" id="placa" name="placa" placeholder="Placa" value="<?php echo $data["vehiculo"]["placa"] ?>">
       <label for="placa">Placa</label>
     </div>
     <div class="form-floating">
-      <input type="text" class="form-control" id="marca" name="marca" placeholder="Marca">
+      <input type="text" class="form-control" id="marca" name="marca" placeholder="Marca" value="<?php echo $data["vehiculo"]["marca"] ?>">
       <label for="marca">Marca</label>
     </div>
     <div class="form-floating">
-      <input type="text" class="form-control" id="modelo" name="modelo" placeholder="Modelo">
+      <input type="text" class="form-control" id="modelo" name="modelo" placeholder="Modelo" value="<?php echo $data["vehiculo"]["modelo"] ?>">
       <label for="modelo">Modelo</label>
     </div>
     <div class="form-floating">
-      <input type="text" class="form-control" id="anio" name="anio" placeholder="Año">
+      <input type="text" class="form-control" id="anio" name="anio" placeholder="Año" value="<?php echo $data["vehiculo"]["anio"] ?>">
       <label for="anio">Año</label>
     </div>
     <div class="form-floating">
-      <input type="text" class="form-control" id="color" name="color" placeholder="Color">
+      <input type="text" class="form-control" id="color" name="color" placeholder="Color" value="<?php echo $data["vehiculo"]["color"] ?>">
       <label for="color">Color</label>
     </div>
     <button id="guardar" name="guardar" type="submit" class="btn btn-success">Guardar</button>
